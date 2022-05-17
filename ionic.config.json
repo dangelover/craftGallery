@@ -1,0 +1,7 @@
+{
+  "name": "Arteezy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
