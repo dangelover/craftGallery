@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="420px"
+            android:layout_height="20px"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/brown"/>
+        <ImageView
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:src="@drawable/ceramica"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20px"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/brown"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="70dp"
+            android:textSize="70sp"
+            android:fontFamily="@font/orange_juice"
+            android:text="Hola !"
+            android:textColor="#B18131"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:textSize="40sp"
+            android:text="BIENVENIDO"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/editext_email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="Email"
+            android:padding="15dp"
+            android:background="@drawable/edittext_custom"
+            android:inputType="textEmailAddress"
+            android:textSize="15sp"/>
+        <EditText
+            android:id="@+id/edittext_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="Contraseña"
+            android:padding="15dp"
+            android:background="@drawable/edittext_custom"
+            android:inputType="textPassword"
+            android:textSize="15sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Olvidaste tu contraseña"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="100dp" />
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/brown"
+            android:background="@drawable/rounded_button"
+            android:text="Ingresar" />
+        <Button
+            android:id="@+id/button_go_to_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrarse"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"/>
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
