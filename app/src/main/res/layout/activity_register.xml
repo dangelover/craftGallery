@@ -59,12 +59,14 @@
             android:background="@drawable/edittext_custom"
             android:inputType="textEmailAddress"
             android:textSize="15sp"/>
+
         <ImageView
             android:id="@+id/imgview_fecha"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="130dp"
-            android:src="@drawable/calendario"/>
+            android:onClick="muestraCalendario"
+            android:src="@drawable/calendario" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -90,6 +92,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:hint="DNI"
+            android:maxLength="8"
             android:padding="15dp"
             android:background="@drawable/edittext_custom"
             android:inputType="number"
@@ -115,6 +118,7 @@
             android:layout_marginRight="15dp"
             android:hint="Celular"
             android:padding="15dp"
+            android:maxLength="9"
             android:background="@drawable/edittext_custom"
             android:inputType="phone"
             android:textSize="15sp"/>
@@ -138,6 +142,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:hint="Confirmar Contraseña"
+            android:maxLength="8"
             android:padding="15dp"
             android:background="@drawable/edittext_custom"
             android:inputType="textPassword"
@@ -179,5 +184,13 @@
             android:text="INGRESAR"/>
 
     </LinearLayout>
+    <DatePicker
+        android:id="@+id/dp_fecha"
+        android:background="@color/gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:calendarTextColor="@color/gray"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

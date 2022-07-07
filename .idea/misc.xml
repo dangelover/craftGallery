@@ -3,10 +3,60 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/proyectkotlin/app/src/main/res/drawable/card_radius.xml" value="0.14479166666666668" />
         <entry key="..\:/proyectkotlin/app/src/main/res/drawable/edittext_custom.xml" value="0.3651041666666667" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.16302083333333334" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/drawable/ic_menu.xml" value="0.16302083333333334" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/drawable/ic_person.xml" value="0.18072916666666666" />
         <entry key="..\:/proyectkotlin/app/src/main/res/drawable/rounded_button.xml" value="0.20729166666666668" />
-        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/action_bar.xml" value="0.146875" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_artezano_register.xml" value="0.2" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_ceramica_home.xml" value="0.19114583333333332" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_client_address_create.xml" value="0.21" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_client_address_list.xml" value="0.14270833333333333" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_client_address_map.xml" value="0.13802083333333334" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_client_bag.xml" value="0.25" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_client_home.xml" value="0.19114583333333332" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_client_orders_detail.xml" value="0.34692028985507245" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_client_orders_map.xml" value="0.33" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_client_payment_form.xml" value="0.19114583333333332" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_client_payments_installments.xml" value="0.11822916666666666" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_client_payments_status.xml" value="0.3489583333333333" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_client_products_detail.xml" value="0.14270833333333333" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_client_products_list.xml" value="0.14739583333333334" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_client_update.xml" value="0.3489583333333333" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_delivery_home.xml" value="0.19114583333333332" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_delivery_orders_detail.xml" value="0.13333333333333333" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_delivery_orders_map.xml" value="0.34692028985507245" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_register.xml" value="0.19114583333333332" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_repartidor_register.xml" value="0.25" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_restaurant_orders_detail.xml" value="0.13333333333333333" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_save_image.xml" value="0.16875" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_select_roles.xml" value="0.17291666666666666" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/activity_select_roles2.xml" value="0.17291666666666666" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/cardview_address.xml" value="0.13802083333333334" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/cardview_categories.xml" value="0.25" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/cardview_order_products.xml" value="0.3489583333333333" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/cardview_orders.xml" value="0.3489583333333333" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/cardview_orders_ceramica.xml" value="0.13333333333333333" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/cardview_product.xml" value="0.14739583333333334" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/cardview_roles.xml" value="0.17291666666666666" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/cardview_shopping_bag.xml" value="0.14270833333333333" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/fragment_ceramica_category.xml" value="0.33" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/fragment_ceramica_orders.xml" value="0.15625" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/fragment_ceramica_orders_status.xml" value="0.13333333333333333" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/fragment_ceramica_product.xml" value="0.22" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/fragment_client_categories.xml" value="0.15625" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/fragment_client_order_status.xml" value="0.3489583333333333" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/fragment_client_orders.xml" value="0.15625" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/fragment_client_profile.xml" value="0.33" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/fragment_delivery_orders.xml" value="0.15625" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/layout/fragment_delivery_orders_status.xml" value="0.13333333333333333" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/menu/bottom_navigation_menu_ceramica.xml" value="0.15625" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/menu/bottom_navigation_menu_client.xml" value="0.15625" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/menu/bottom_navigation_menu_delivery.xml" value="0.15625" />
+        <entry key="..\:/proyectkotlin/app/src/main/res/menu/menu_shoping_bag.xml" value="0.14270833333333333" />
       </map>
     </option>
   </component>

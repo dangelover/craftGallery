@@ -11,4 +11,6 @@
     <color name="brown_accent">#B07156</color>
     <color name="gray">#B5B5B5</color>
     <color name="gray_light">#F5F5F5</color>
+    <color name="red">#ED0D0D</color>
+    <color name="blue">#09A3E1</color>
 </resources>

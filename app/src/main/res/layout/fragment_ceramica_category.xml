@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ceramica.CeramicaCategoryFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:fontFamily="@font/orange_juice"
+            android:text="Nueva Categoria"
+            android:textColor="@color/brown"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+        <ImageView
+            android:id="@+id/imageview_category"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_image"
+            android:background="@color/gray_light"/>
+        <EditText
+            android:id="@+id/edittext_category"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="Nombre de la categoria"
+            android:padding="15dp"
+            android:background="@drawable/edittext_custom"
+            android:inputType="text"
+            android:textSize="15sp"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_create_category"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:backgroundTint="@color/brown"
+        android:background="@drawable/rounded_button"
+        android:layout_gravity="bottom|center"
+        android:text="Crear categoria" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,15 +1,21 @@
 package com.incanoit.craftgalleryapp.activities
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.view.View
 import android.widget.*
+import androidx.annotation.RequiresApi
+import com.google.gson.Gson
 import com.incanoit.craftgalleryapp.R
+import com.incanoit.craftgalleryapp.activities.client.home.ClientHomeActivity
 import com.incanoit.craftgalleryapp.models.ResponseHttp
 import com.incanoit.craftgalleryapp.models.User
 import com.incanoit.craftgalleryapp.providers.UsersProvider
+import com.incanoit.craftgalleryapp.utils.SharedPref
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,8 +32,10 @@ class RegisterActivity : AppCompatActivity() {
     var editTextEmail: EditText?=null
     var editTextPassword: EditText?=null
     var editTextPasswordConfirm: EditText?=null
+    var dpFecha: DatePicker?=null
     var btnRegister: Button?=null
     var userProvider = UsersProvider()
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -39,14 +47,31 @@ class RegisterActivity : AppCompatActivity() {
         editTextFecha = findViewById(R.id.edittext_fecha)
         editTextEmail = findViewById(R.id.edittext_email_register)
         imgViewFecha = findViewById(R.id.imgview_fecha)
+        dpFecha=findViewById(R.id.dp_fecha)
         editTextPassword = findViewById(R.id.edittext_password)
         editTextPasswordConfirm = findViewById(R.id.edittext_confir_password)
+        editTextFecha?.setText(getFechaDatePicker())
         btnRegister = findViewById(R.id.btn_register)
         //? SI LA VARIABLE VIENE NULLA NO SE EJECUTA EL EVENTO
         btnRegister?.setOnClickListener { goToRegister() }
         textViewGoToLogin?.setOnClickListener{
             goToLogin()
         }
+        dpFecha?.setOnDateChangedListener{
+            dpFecha,anio,mes,dia->editTextFecha?.setText(getFechaDatePicker())
+            dpFecha.visibility=View.GONE
+
+        }
+    }
+    fun getFechaDatePicker():String{
+        var dia = dpFecha?.dayOfMonth.toString().padStart(2,'0')
+        var mes = (dpFecha!!.month+1).toString().padStart(2,'0')
+        var anio = dpFecha?.year.toString().padStart(4,'0')
+        var fecha = "$dia/$mes/$anio"
+        return fecha
+    }
+    fun muestraCalendario(view: View){
+        dpFecha?.visibility=View.VISIBLE
     }
     private fun goToRegister(){
         val TAG = "RegisterActivity"
@@ -65,6 +90,7 @@ class RegisterActivity : AppCompatActivity() {
                 phone = phone,
                 dni=dni,
                 fechaNacimiento = fecha_nac,
+                idRol="1",
                 email = email,
                 password = password,
             )
@@ -75,6 +101,10 @@ class RegisterActivity : AppCompatActivity() {
                     call: Call<ResponseHttp>,
                     response: Response<ResponseHttp>
                 ) {
+                    if(response.body()?.isSuccess==true){
+                        saveUserInSession(response.body()?.data.toString())
+                        goToClientHome()
+                    }
                     Toast.makeText(this@RegisterActivity, response.body()?.message, Toast.LENGTH_LONG).show()
                     Log.d(TAG,"Response: ${response}")
                     Log.d(TAG,"Response: ${response.body()}")
@@ -88,6 +118,21 @@ class RegisterActivity : AppCompatActivity() {
             })
 
         }
+    }
+    private fun goToClientHome(){
+        val i = Intent(this, SaveImageActivity::class.java)
+        i.flags=
+            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK //eliminar el historial de pantallas
+        startActivity(i)
+    }
+    private fun saveUserInSession(data:String){
+        //vamos a usar nuestro metodo SharedPref y le pasamos el activity
+        val sharedPref = SharedPref(this)
+        val gson = Gson()
+        //usando el metodo gson.fromJson vamos a transformar lo que traiga la data en un objeto de tipo usuario
+        val user = gson.fromJson(data,User::class.java)
+        //ahora ejecutamos el metodo save y le pasamos el key el cual es como queremos que se guarde o con que nombre
+        sharedPref.save("user",user)
     }
     // definimos esta funcion como String, a cualquier string podemos aplicar este metodo
     fun String.isEmailValid(): Boolean{
@@ -117,12 +162,15 @@ class RegisterActivity : AppCompatActivity() {
         }
         if (lastname.isBlank()){
             Toast.makeText(this, "Debes ingresar tus apellidos", Toast.LENGTH_SHORT).show()
+            return false
         }
         if (dni.isBlank()){
             Toast.makeText(this, "Debes ingresar tu DNI", Toast.LENGTH_SHORT).show()
+            return false
         }
         if (phone.isBlank()){
             Toast.makeText(this, "Debes ingresar tu numero de celular", Toast.LENGTH_SHORT).show()
+            return false
         }
         if (name.isBlank()){
             Toast.makeText(this, "debes ingresar el nombre", Toast.LENGTH_SHORT).show()
@@ -136,8 +184,16 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this, "debes registar tu contraseña", Toast.LENGTH_SHORT).show()
             return false
         }
+        if (password.length>8){
+            Toast.makeText(this, "Minimo 8 caracteres", Toast.LENGTH_SHORT).show()
+            return false
+        }
         if (confirm_password.isBlank()){
             Toast.makeText(this, "debes registar tu contraseña", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        if (confirm_password.length>8){
+            Toast.makeText(this, "Minimo 8 caracteres", Toast.LENGTH_SHORT).show()
             return false
         }
         if (password != confirm_password){

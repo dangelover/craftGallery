@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.client.update.ClientUpdateActivity">
+    <include layout="@layout/action_bar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circle_image_user"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/user_icon"
+            app:civ_border_color="@color/gray"
+            android:layout_marginTop="70dp"
+            app:civ_border_width="5dp"
+            app:civ_circle_background_color="@color/gray_light"
+            android:layout_gravity="top|center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="ACTUALIZA TU PERFIL "/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edittext_fecha_update"
+                android:layout_width="310dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/edittext_custom"
+                android:hint="Fecha de nacimiento"
+                android:inputType="textEmailAddress"
+                android:padding="15dp"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/imgview_fecha"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/calendario" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="250dp">
+        <EditText
+            android:id="@+id/edittext_name_update"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="Nombre"
+            android:padding="15dp"
+            android:background="@drawable/edittext_custom"
+            android:inputType="text"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="370dp">
+        <EditText
+            android:id="@+id/edittext_lastname_update"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="Apellidos"
+            android:padding="15dp"
+            android:background="@drawable/edittext_custom"
+            android:inputType="text"
+            android:textSize="15sp"/>
+        <EditText
+            android:id="@+id/edittext_dni_update"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="DNI"
+            android:padding="15dp"
+            android:background="@drawable/edittext_custom"
+            android:inputType="number"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:id="@+id/edittext_phone_update"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="Celular"
+            android:padding="15dp"
+            android:background="@drawable/edittext_custom"
+            android:inputType="phone"
+            android:textSize="15sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="540dp"
+            android:backgroundTint="@color/brown"
+            android:background="@drawable/rounded_button"
+            android:layout_gravity="center"
+            android:text="Actualizar" />
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

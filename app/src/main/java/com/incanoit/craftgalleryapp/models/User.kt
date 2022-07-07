@@ -1,27 +1,33 @@
 package com.incanoit.craftgalleryapp.models
 
+import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 
 class User(
     //mediante el SerializedName tenemos que especificar a que campo vamos a rellenar, y tiene que ser el mismo que el de la bd
-    @SerializedName("id") val id: String? =null,
-    @SerializedName("email") val email: String,
-    @SerializedName("name") val name: String,
-    @SerializedName("DNI") val dni: String,
-    @SerializedName("fecha_nacimiento") val fechaNacimiento: String,
-    @SerializedName("lastname") val lastname: String,
-    @SerializedName("phone") val phone: String,
-    @SerializedName("image") val image: String? =null,
-    @SerializedName("is_availabe") val isAvailabe: Boolean? = null,
-    @SerializedName("session_token") val sessionToken: String? =null,
-    @SerializedName("password") val password: String,
-    @SerializedName("addres") val addres: String? =null,
-    @SerializedName("years_market") val yearsMarket: String? =null,
-    @SerializedName("code_rna") val codeRna: String? =null,
-    @SerializedName("certificate") val certificate: String? =null,
+    @SerializedName("id") var id: String? =null,
+    @SerializedName("email") var email: String,
+    @SerializedName("name") var name: String,
+    @SerializedName("DNI") var dni: String,
+    @SerializedName("fecha_nacimiento") var fechaNacimiento: String,
+    @SerializedName("lastname") var lastname: String,
+    @SerializedName("phone") var phone: String,
+    @SerializedName("image") var image: String? =null,
+    @SerializedName("is_availabe") var isAvailabe: Boolean? = null,
+    @SerializedName("session_token") var sessionToken: String? =null,
+    @SerializedName("password") var password: String,
+    @SerializedName("addres") var addres: String? =null,
+    @SerializedName("years_market") var yearsMarket: String? =null,
+    @SerializedName("id_rol") var idRol: String? =null,
+    @SerializedName("code_rna") var codeRna: String? =null,
+    @SerializedName("certificate") var certificate: String? =null,
+    @SerializedName("roles") var roles: ArrayList<Rol>?=null
 ) {
     //creamos el metodo toString
     override fun toString(): String {
-        return "User(id='$id', email='$email', name='$name', dni='$dni', fechaNacimiento='$fechaNacimiento', lastname='$lastname', phone='$phone', image='$image', isAvailabe=$isAvailabe, sessionToken='$sessionToken', password='$password', addres='$addres', yearsMarket='$yearsMarket', codeRna='$codeRna', certificate='$certificate')"
+        return "$name $lastname"
+    }
+    fun toJson():String {
+        return Gson().toJson(this)
     }
 }
