@@ -1,4 +1,4 @@
-package com.incanoit.craftgalleryapp.activities.ceramica.home
+package com.incanoit.craftgalleryapp.activities.administrador.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,46 +11,36 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.gson.Gson
 import com.incanoit.craftgalleryapp.R
 import com.incanoit.craftgalleryapp.activities.MainActivity
-import com.incanoit.craftgalleryapp.fragments.ceramica.CeramicaCategoryFragment
-import com.incanoit.craftgalleryapp.fragments.ceramica.CeramicaListProductsFragment
-import com.incanoit.craftgalleryapp.fragments.ceramica.CeramicaOrdersFragment
-import com.incanoit.craftgalleryapp.fragments.ceramica.CeramicaProductFragment
+import com.incanoit.craftgalleryapp.fragments.admins.AdminHomeFragment
+import com.incanoit.craftgalleryapp.fragments.admins.AdminUsersFragment
 import com.incanoit.craftgalleryapp.fragments.client.ClientCategoriesFragment
 import com.incanoit.craftgalleryapp.fragments.client.ClientOrdersFragment
 import com.incanoit.craftgalleryapp.fragments.client.ClientProfileFragment
 import com.incanoit.craftgalleryapp.models.User
 import com.incanoit.craftgalleryapp.utils.SharedPref
 
-class CeramicaHomeActivity : AppCompatActivity() {
-    private val TAG = "CeramicaHomeActivity"
+class AdminHomeActivity : AppCompatActivity() {
+    private val TAG = "ClientHomeActivity"
     //    var buttonLogout: Button?=null
     var sharedPref:SharedPref?=null
     var bottomNavigation: BottomNavigationView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ceramica_home)
+        setContentView(R.layout.activity_admin_home)
         sharedPref= SharedPref(this )
 //        buttonLogout = findViewById(R.id.btn_logout)
 //        buttonLogout?.setOnClickListener {logout()}
-        openFragment(CeramicaOrdersFragment())
+        openFragment(ClientCategoriesFragment())
         bottomNavigation = findViewById(R.id.bottom_navigation)
         bottomNavigation?.setOnNavigationItemSelectedListener {
             when (it.itemId){
                 //si el usuario selecciono el home
                 R.id.item_home ->{
-                    openFragment(CeramicaOrdersFragment())
+                    openFragment(AdminHomeFragment())
                     true
                 }
-                R.id.item_category ->{
-                    openFragment(CeramicaCategoryFragment())
-                    true
-                }
-                R.id.item_products ->{
-                    openFragment(CeramicaProductFragment())
-                    true
-                }
-                R.id.item_products_list->{
-                    openFragment(CeramicaListProductsFragment())
+                R.id.item_users ->{
+                    openFragment(AdminUsersFragment())
                     true
                 }
                 R.id.item_profile ->{

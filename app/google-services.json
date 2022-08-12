@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "125248045240",
+    "project_id": "kotlindelivery-bfe37",
+    "storage_bucket": "kotlindelivery-bfe37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125248045240:android:3a64595ee2745e0697f44d",
+        "android_client_info": {
+          "package_name": "com.incanoit.craftgalleryapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125248045240-tl3tu4g3u8tagip375rfgq6v3p0k5k2i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.incanoit.craftgalleryapp",
+            "certificate_hash": "7cbc73a24b1222198698470c798e841c812cdcb1"
+          }
+        },
+        {
+          "client_id": "125248045240-26h1292p32ppble7ltk0e0pcmr6tg0a3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9apuMk5pLEHhgoqDWcwyguuWLGh6VDJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125248045240-26h1292p32ppble7ltk0e0pcmr6tg0a3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

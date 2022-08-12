@@ -14,14 +14,18 @@ import okhttp3.RequestBody
 import retrofit2.Call
 import java.io.File
 
-class ProductsProvider(val token:String) {
+class ProductsProvider(val token:String? = null) {
     private var productsRoutes: ProductsRoutes?=null
+    private var productsRoutesWithToken: ProductsRoutes?=null
     init {
         val api = ApiRoutes()
-        productsRoutes = api.getProductsRoutes(token)
+        productsRoutesWithToken=api.getProductsRoutesWithToken()
+        if (token!=null){
+            productsRoutes = api.getProductsRoutes(token)
+        }
     }
     fun findByCategory(idCategory: String): Call<ArrayList<Product>>?{
-        return productsRoutes?.findByCategory(idCategory,token)
+        return productsRoutes?.findByCategory(idCategory,token!!)
     }
     //creamos una funcion y le pasamos como parametro la lista de archivos de images y el product
     fun create(files: List<File>, product: Product): Call<ResponseHttp>? {
@@ -34,5 +38,9 @@ class ProductsProvider(val token:String) {
         }
         val requestBody = RequestBody.create(MediaType.parse("text/plain"),product.toJson())
         return productsRoutes?.create(images,requestBody,token!!)
+    }
+    fun updateStatus(idProducto:String):Call<ResponseHttp>?{
+        Log.d("ProductProvider","${idProducto}")
+        return productsRoutesWithToken?.updateStatus(idProducto)
     }
 }

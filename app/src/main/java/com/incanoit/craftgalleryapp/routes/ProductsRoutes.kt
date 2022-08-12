@@ -25,6 +25,11 @@ interface ProductsRoutes {
         @Part("product") product: RequestBody,
         @Header("Authorization") token: String
     ): Call<ResponseHttp>
+    @PUT("products/updateStatus/{id_producto}")
+    fun updateStatus(
+        @Path("id_producto") idProducto: String,
+//        @Header("Authorization") token: String
+    ): Call<ResponseHttp>
 
 
 

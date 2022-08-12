@@ -1,5 +1,6 @@
 package com.incanoit.craftgalleryapp.models
 
+import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 
@@ -8,7 +9,7 @@ class User(
     @SerializedName("id") var id: String? =null,
     @SerializedName("email") var email: String,
     @SerializedName("name") var name: String,
-    @SerializedName("DNI") var dni: String,
+    @SerializedName("dni") var dni: String,
     @SerializedName("fecha_nacimiento") var fechaNacimiento: String,
     @SerializedName("lastname") var lastname: String,
     @SerializedName("phone") var phone: String,
@@ -25,7 +26,8 @@ class User(
 ) {
     //creamos el metodo toString
     override fun toString(): String {
-        return "$name $lastname"
+//        Log.d("User", dni)
+        return "$name $dni  $lastname $fechaNacimiento $image "
     }
     fun toJson():String {
         return Gson().toJson(this)

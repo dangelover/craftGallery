@@ -35,6 +35,9 @@ class ApiRoutes {
         //esta va a ser la funcion que cree las rutas
         return retrofit.getClientWithToken(API_URL,token).create(OrdersRoutes::class.java)
     }
+    fun getProductsRoutesWithToken():ProductsRoutes{
+        return retrofit.getClient(API_URL).create(ProductsRoutes::class.java)
+    }
     fun getProductsRoutes(token: String): ProductsRoutes{
         //USAMOS EL METODO GETCLIENT Y VAMOS PASARLE LA URL
         //y ahora usamos el metodo create y el pasamos la clase UsersRoutes

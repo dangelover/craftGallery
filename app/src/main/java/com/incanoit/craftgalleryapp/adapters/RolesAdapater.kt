@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.incanoit.craftgalleryapp.R
+import com.incanoit.craftgalleryapp.activities.administrador.home.AdminHomeActivity
 import com.incanoit.craftgalleryapp.activities.ceramica.home.CeramicaHomeActivity
 import com.incanoit.craftgalleryapp.activities.client.home.ClientHomeActivity
 import com.incanoit.craftgalleryapp.activities.delivery.home.DeliveryHomeActivity
@@ -51,6 +52,11 @@ class RolesAdapater(val context:Activity, val roles:ArrayList<Rol>):RecyclerView
         } else if (rol.name=="REPARTIDOR"){
             sharedPref.save("rol","REPARTIDOR")
             val i = Intent(context, DeliveryHomeActivity::class.java)
+            context.startActivity(i)
+        }
+        else if (rol.name=="ADMINISTRADOR"){
+            sharedPref.save("rol","ADMINISTRADOR")
+            val i = Intent(context, AdminHomeActivity::class.java)
             context.startActivity(i)
         }
 

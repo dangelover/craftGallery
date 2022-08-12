@@ -11,8 +11,10 @@ class Product(
     @SerializedName("image2") val image2: String? =null,
     @SerializedName("image3") val image3: String? =null,
     @SerializedName("id_category") val idCategory: String,
+    @SerializedName("id_user") val idUsuario: String,
     @SerializedName("price") val price: Double,
     @SerializedName("quantity") var quantity: Int?=null,
+    @SerializedName("usuario") var usuario:ArrayList<User>?=null
 ) {
     fun toJson(): String{
         return Gson().toJson(this)

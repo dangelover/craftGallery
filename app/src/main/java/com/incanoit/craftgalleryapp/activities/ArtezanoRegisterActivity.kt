@@ -94,7 +94,7 @@ class ArtezanoRegisterActivity : AppCompatActivity() {
                 name = name,
                 lastname = lastname,
                 phone = phone,
-                dni=dni,
+                dni =dni,
                 fechaNacimiento = fecha_nac,
                 yearsMarket=years,
                 idRol="2",

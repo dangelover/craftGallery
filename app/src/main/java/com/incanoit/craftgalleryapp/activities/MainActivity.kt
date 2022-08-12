@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.gson.Gson
 import com.incanoit.craftgalleryapp.R
+import com.incanoit.craftgalleryapp.activities.administrador.home.AdminHomeActivity
 import com.incanoit.craftgalleryapp.activities.ceramica.home.CeramicaHomeActivity
 import com.incanoit.craftgalleryapp.activities.client.home.ClientHomeActivity
 import com.incanoit.craftgalleryapp.activities.delivery.home.DeliveryHomeActivity
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
 
                     }else{
-                        Toast.makeText(this@MainActivity,"los datos no son correctos",Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@MainActivity,"Datos incorrectos o su cuenta ha sido desactivada",Toast.LENGTH_LONG).show()
                     }
                 }
 
@@ -105,6 +106,11 @@ class MainActivity : AppCompatActivity() {
         i.flags=FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK //eliminar el historial de pantallas
         startActivity(i)
     }
+    private fun goToDeliveryAdmin(){
+        val i = Intent(this,AdminHomeActivity::class.java)
+        i.flags=FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK //eliminar el historial de pantallas
+        startActivity(i)
+    }
     private fun goToSelectRol(){
         val i = Intent(this,SelectRolesActivity::class.java)
         i.flags=FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK //eliminar el historial de pantallas
@@ -120,7 +126,7 @@ class MainActivity : AppCompatActivity() {
         sharedPref.save("user",user)
         //si el usuario tiene mas de 1 rol
         //para llamar al metodo size siempre y cuando puede venir vacio el arreglo roles es necesario colocar !!
-        Log.d("MainActivity","${user.roles}")
+        Log.d("MainActivity","$user")
 
         if (user.roles?.size!!>1){
             goToSelectRol()
@@ -134,6 +140,9 @@ class MainActivity : AppCompatActivity() {
                     goToClientHome()
                 }else if(rolUser=="REPARTIDOR"){
                     goToDeliveryHome()
+                }
+                else if(rolUser=="ADMINISTRADOR"){
+                    goToDeliveryAdmin()
                 }
             }
         }

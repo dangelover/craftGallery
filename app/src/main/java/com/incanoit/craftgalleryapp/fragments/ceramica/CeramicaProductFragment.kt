@@ -14,6 +14,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.gson.Gson
 import com.incanoit.craftgalleryapp.R
+import com.incanoit.craftgalleryapp.activities.ceramica.terminos.TerminosActivity
 import com.incanoit.craftgalleryapp.adapters.CategoriesAdapater
 import com.incanoit.craftgalleryapp.models.Category
 import com.incanoit.craftgalleryapp.models.Product
@@ -48,6 +49,7 @@ class CeramicaProductFragment : Fragment() {
     var categoriesProvider: CategoriesProvider?=null
     var productsProvider: ProductsProvider?=null
     var idCategory = ""
+    var textViewTerminos:TextView?=null
 
 
 
@@ -65,6 +67,7 @@ class CeramicaProductFragment : Fragment() {
         imageViewProduct3=myView?.findViewById(R.id.imageview_image3)
         buttonCreateProduct=myView?.findViewById(R.id.btn_create_product)
         spinnerCategories=myView?.findViewById(R.id.spinner_categories)
+        textViewTerminos=myView?.findViewById(R.id.textview_terminos)
         buttonCreateProduct?.setOnClickListener { createProduct() }
         imageViewProduct1?.setOnClickListener { selectImage(101) }
         imageViewProduct2?.setOnClickListener { selectImage(102) }
@@ -74,8 +77,16 @@ class CeramicaProductFragment : Fragment() {
         categoriesProvider = CategoriesProvider(user?.sessionToken!!)
         productsProvider = ProductsProvider(user?.sessionToken!!)
         getCategories()
+        textViewTerminos?.setOnClickListener {
+            goToTerm()
+
+        }
 
         return myView
+    }
+    private fun goToTerm(){
+        val i = Intent(context,TerminosActivity::class.java)
+        startActivity(i)
     }
     private fun isValidForm(name: String,description:String, price: String): Boolean {
         if (name.isNullOrBlank()){
@@ -127,6 +138,7 @@ class CeramicaProductFragment : Fragment() {
         val descrption = editTextProductDescription?.text.toString()
         val priceText = editTextProductPrice?.text.toString()
         val files = ArrayList<File>()
+        Log.d(TAG,"usuario id: ${user?.id}")
 
         if (isValidForm(name,descrption,priceText )){
             //vamos a pasar al modelo Product el nombre, la descripcion y el precio
@@ -135,7 +147,8 @@ class CeramicaProductFragment : Fragment() {
                 description = descrption,
                 //convertimos el precio de string a double
                 price = priceText.toDouble(),
-                idCategory = idCategory
+                idCategory = idCategory,
+                idUsuario = user?.id!!
             )
             files.add(imageFile1!!)
             files.add(imageFile2!!)

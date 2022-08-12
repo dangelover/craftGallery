@@ -23,6 +23,18 @@
         android:theme="@style/Theme.CraftGalleryApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.ceramica.terminos.TerminosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ceramica.products.list.CeramicaProductsListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".fragments.admins.update.UserUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.administrador.users.lists.AdminUsersListActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.RepartidorRegisterActivity"
             android:exported="false" />
         <activity
@@ -94,6 +106,9 @@
             android:exported="false" />
         <activity
             android:name=".activities.client.home.ClientHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.administrador.home.AdminHomeActivity"
             android:exported="false" />
         <activity
             android:name=".activities.RegisterActivity"

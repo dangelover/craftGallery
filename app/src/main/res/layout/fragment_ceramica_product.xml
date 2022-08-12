@@ -99,8 +99,22 @@
             android:id="@+id/spinner_categories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"/>
+            android:layout_margin="4dp"/>
     </LinearLayout>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar terminos y condiciones"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="120dp"/>
+    <TextView
+        android:id="@+id/textview_terminos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="110dp"
+        android:text="Ver terminos y condiciones"/>
+
     <Button
         android:id="@+id/btn_create_product"
         android:layout_width="wrap_content"
@@ -108,6 +122,6 @@
         android:layout_gravity="center|bottom"
         android:background="@drawable/rounded_button"
         android:text="Agregar Producto"
-        android:layout_marginBottom="70dp" />
+        android:layout_marginBottom="60dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -27,6 +27,9 @@ class UsersProvider(val token:String? = null) {
             usersRoutesToken=api.getUsersRoutesWithToken(token!!)
         }
     }
+    fun getAllUser(): Call<ArrayList<User>>?{
+        return usersRoutesToken?.getAll(token!!)
+    }
     fun getDeliveryMen(): Call<ArrayList<User>>?{
         return usersRoutesToken?.getDeliveryMen(token!!)
     }
@@ -53,6 +56,15 @@ class UsersProvider(val token:String? = null) {
         Log.d("UsersProvider","$requestBody")
         Log.d("UsersProvider","$token")
         return usersRoutesToken?.update(image,requestBody,token!!)
+    }
+    fun updateStatus(idUsuario:String): Call<ResponseHttp>?{
+        Log.d("UsersProvider","${idUsuario}")
+        return usersRoutes?.updateStatus(idUsuario)
+    }
+    fun getUserByID(idUsuario: String): Call<ResponseHttp>?{
+        Log.d("UsersProvider","${idUsuario}")
+        return usersRoutes?.getUserByID(idUsuario)
+
     }
 
 }
